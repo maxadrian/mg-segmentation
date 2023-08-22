@@ -11,4 +11,4 @@ Download macros as ijm files, drag into Fiji status bar, adjust parameters and r
 
 Tested on ImageJ version 1.53t
 
-Requires MorpholibJ and SCF-MBI plugins to be installed before running these macros.
+Requires MorpholibJ (IJPB-plugins http://sites.imagej.net/IJPB-plugins/) and SCF-MBI (SCF MPI CBG	http://sites.imagej.net/SCF-MPI-CBG/) plugins to be installed before running these macros.
