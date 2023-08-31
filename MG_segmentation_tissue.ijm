@@ -10,8 +10,8 @@
  * Saves binary label masks and maxima regions(to define cells) in new subfolder
  * 
  * Compared to the in vitro IF macro, this pipeline uses seed-based watershed. To define maxima (darkest DAB stain ~ nuclei) a stringent threshold is used with the Area Maxima function from SCF.
- * Based on these seeds the guided watershed can seperate some of the clustered microglia in the APP model.
- * Thresholds are dynamic, dependend on mean image intensity.
+ * Based on these seeds the guided watershed can seperate clustered microglia.
+ * Thresholds are dynamic, dependend on mean image intensity, and need to be optimised empirically.
  */
 
 #@ File (style="directory") dir
