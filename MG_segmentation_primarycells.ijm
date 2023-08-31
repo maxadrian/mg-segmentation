@@ -1,9 +1,9 @@
 /*
  * Max Adrian
  * Genentech Inc gRED Neuroscience
- * October 2021
+ * 2021-2023
  * 
- * Cell Morphology Analysis
+ * MG Morphology Analysis
  * v3
  * 
  * Record Morphology of cells acquired in 2D widefield,
@@ -28,7 +28,7 @@ FTFocus = newArray(lengthOf(filelist)); // empty array to store focus values
 // parameters
 size_min = 200;
 f1 = 10;
-w_seed = 10000; //used 5,000 first but it seemed to seperate too much
+w_seed = 10000; 
 
 
 //make subfolder for count masks
@@ -78,13 +78,13 @@ for (i = 0; i < lengthOf(filelist); i++) { /// change 0 to random number here fo
 		run("Analyze Particles...", "size="+size_min+"-Infinity show=[Count Masks] display exclude summarize");
 		run("glasbey");
 		run("Enhance Contrast", "saturated=0.35");		
-		saveAs("tiff", dir+"/count_masks_v3/"+title);
+		saveAs("tiff", dir+"/count_masks/"+title);
 
 		// make overlay and save
 		rename ("mask"); // renames current image (the count mask)
 		selectWindow("cellmask");
 		run("Add Image...", "image=mask x=0 y=0 opacity=40 zero");
-		saveAs("tiff", dir+"/count_masks_v3/Overlay_"+title);
+		saveAs("tiff", dir+"/count_masks/Overlay_"+title);
 
 		// clean up windows
 		run("Close All");
@@ -96,7 +96,7 @@ for (i = 0; i < lengthOf(filelist); i++) { /// change 0 to random number here fo
 print("Done!");
 //save results table
 selectWindow("Results");
-saveAs("Results", dir+"/Results_v3.csv");
+saveAs("Results", dir+"/Results.csv");
 
 //save Summary table after adding focus metric
 selectWindow("Summary");
@@ -104,12 +104,12 @@ IJ.renameResults("Results"); // renaming summary table to 'results' to add focus
 for (k = 0; k<count; k++){ //importantly length of the array does not matter
 	setResult("FTFocus", k, FTFocus[k]); // add focus vector as new column
 }
-saveAs("Results", dir+"/Summary_v3.csv");
+saveAs("Results", dir+"/Summary.csv");
 print("All done!");
 
 // save Log
 selectWindow("Log");
-saveAs("Text", dir+"/Log_v3.txt");
+saveAs("Text", dir+"/Log.txt");
 
 //measure focus quality in fft space, larger is sharper, returns value, see https://forum.image.sc/t/blur-detection-in-imagej/36880/9  nranthony
 function measureFFT(){
