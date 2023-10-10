@@ -2,7 +2,8 @@
 Adrian et al Nat Comms 2023 - Fiji scripts for microglia segmentation
 
 This simple repro contains the ImageJ/Fiji macros for the following publication:
-
+Adrian, M., Weber, M., Tsai, MC. et al. Polarized microtubule remodeling transforms the morphology of reactive microglia and drives cytokine release. Nat Commun 14, 6322 (2023). https://doi.org/10.1038/s41467-023-41891-6
+https://www.nature.com/articles/s41467-023-41891-6
 
 ## Instructions:
 Download macros as ijm files, drag into Fiji status bar, adjust parameters and run.
